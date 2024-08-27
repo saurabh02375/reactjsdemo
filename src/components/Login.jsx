@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import './Register.css'; // External CSS file to maintain the styles
 
-const Register = () => {
+const Login = () => {
   
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -121,4 +121,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
