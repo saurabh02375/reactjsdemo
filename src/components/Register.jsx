@@ -7,6 +7,9 @@ const Register = () => {
   const [formData, setFormData] = useState({
     username: '',
     image: null,
+    email:'',
+    number:''
+
   });
 
   const handleChange = (e) => {
@@ -53,7 +56,7 @@ const Register = () => {
           name="username"
           type="text"
           className="input"
-          value={formData.username}
+          value={formData.username|| ''}
           onChange={handleChange}
         />
         <span>Username</span>
@@ -65,7 +68,7 @@ const Register = () => {
           name="email"
           type="text"
           className="input"
-          value={formData.email}
+          value={formData.email|| ''}
           onChange={handleChange}
         />
         <span>Email</span>
@@ -77,7 +80,7 @@ const Register = () => {
           name="phone"
           type="number"
           className="input"
-          value={formData.phone}
+          value={formData.phone|| ''}
           onChange={handleChange}
         />
         <span>Phone Number</span>
