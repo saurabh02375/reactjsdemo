@@ -79,7 +79,7 @@ const Register = () => {
         <input
           required
           placeholder=""
-          name="phone"
+          name="number"
           type="number"
           className="input"
           value={formData.number|| ''}
