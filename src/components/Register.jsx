@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './Register.css'; // External CSS file to maintain the styles
 
 const Register = () => {
+  
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     username: '',
     image: null,
@@ -14,7 +16,7 @@ const Register = () => {
       [name]: files ? files[0] : value,
     });
   };
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = new FormData();
@@ -23,17 +25,33 @@ const Register = () => {
 
     // Handle the form submission logic here
     console.log('Form data:', formData);
-    // Example: Send form data to the server
-    // fetch('/register', {
-    //   method: 'POST',
-    //   body: form,
-    // }).then((response) => {
-    //   console.log('Response:', response);
-    // });
+
+    // Trigger useEffect by updating state
+    setIsSubmitted(true);
   };
 
+    useEffect(() => {
+      if (isSubmitted) {
+        fetch('https://api.github.com/users/hiteshchoudhary')
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((error) => {
+            console.error('Error fetching data:', error);
+          });
+        
+        // Reset the submission state if needed
+        setIsSubmitted(false);
+      }
+    }, [isSubmitted]);
+
   return (
-    <form className="form" onSubmit={handleSubmit} encType="multipart/form-data">
+    <>
+      <div className="col-lg-6 col-12 mx-auto">
+      {/* <h1 className="text-white mt-2 mb-4 pb-2 text-center">Stay tuned!</h1> */}
+        <div className="d-flex flex-wrap align-items-center justify-content-center">
+        <form className="form" onSubmit={handleSubmit} encType="multipart/form-data">
       <p className="title">Register</p>
       <p className="message">Signup now and get full access to our app.</p>
 
@@ -74,6 +92,9 @@ const Register = () => {
 
       <button className="submit">Submit</button>
     </form>
+        </div>
+      </div>
+    </>
   );
 };
 
