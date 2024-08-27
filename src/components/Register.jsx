@@ -82,7 +82,7 @@ const Register = () => {
           name="phone"
           type="number"
           className="input"
-          value={formData.phone|| ''}
+          value={formData.number|| ''}
           onChange={handleChange}
         />
         <span>Phone Number</span>
