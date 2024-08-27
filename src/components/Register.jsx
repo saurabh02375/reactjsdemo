@@ -19,40 +19,23 @@ const Register = () => {
   
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
-    try {
-        const response = await fetch('/submit-form', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        });
 
-        const result = await response.json();
-        console.log('Server response:', result);
-
-        // Handle success or error here
-    } catch (error) {
-        console.error('Error submitting form:', error);
-    }
-};
-
-    useEffect(() => {
-      if (isSubmitted) {
-        fetch('https://api.github.com/users/hiteshchoudhary')
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data);
-          })
-          .catch((error) => {
-            console.error('Error fetching data:', error);
-          });
-        
-        // Reset the submission state if needed
-        setIsSubmitted(false);
-      }
-    }, [isSubmitted]);
+      const data = new FormData();
+      data.append('username', formData.username);
+      data.append('image', formData.image);
+  
+      fetch('https://nodeproject-izw9.onrender.com/submit-form', {  
+        method: 'POST',
+        body: data,
+      })
+      .then(response => response.json())
+      .then(result => {
+        console.log('Success:', result);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  };
 
   return (
     <>
