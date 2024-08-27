@@ -25,6 +25,8 @@ const Register = () => {
 
       const data = new FormData();
       data.append('username', formData.username);
+      data.append('email', formData.email);
+      data.append('number', formData.number);
       data.append('image', formData.image);
   
       fetch('https://nodeproject-izw9.onrender.com/submit-form', {  
