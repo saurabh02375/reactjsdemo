@@ -17,18 +17,26 @@ const Register = () => {
     });
   };
   
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = new FormData();
-    form.append('username', formData.username);
-    form.append('image', formData.image);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    
+    try {
+        const response = await fetch('/submit-form', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        });
 
-    // Handle the form submission logic here
-    console.log('Form data:', formData);
+        const result = await response.json();
+        console.log('Server response:', result);
 
-    // Trigger useEffect by updating state
-    setIsSubmitted(true);
-  };
+        // Handle success or error here
+    } catch (error) {
+        console.error('Error submitting form:', error);
+    }
+};
 
     useEffect(() => {
       if (isSubmitted) {
