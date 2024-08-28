@@ -51,7 +51,7 @@ const Login = () => {
       <div className="col-lg-6 col-12 mx-auto">
       {/* <h1 className="text-white mt-2 mb-4 pb-2 text-center">Stay tuned!</h1> */}
         <div className="d-flex flex-wrap align-items-center justify-content-center">
-        <form className="form" onSubmit={handleSubmit} encType="multipart/form-data">
+        <form className=" register-class form" onSubmit={handleSubmit} encType="multipart/form-data">
       <p className="title">Login</p>
 
       <label>
@@ -60,7 +60,7 @@ const Login = () => {
           placeholder=""
           name="username"
           type="text"
-          className="input"
+          className="input register-class text-light"
           value={formData.username}
           onChange={handleChange}
         />
@@ -72,7 +72,7 @@ const Login = () => {
           placeholder=""
           name="password"
           type="password"
-          className="input"
+          className="input register-class text-light"
           value={formData.password}
           onChange={handleChange}
         />
