@@ -28,8 +28,8 @@ const Register = () => {
     data.append('username', formData.username);
     data.append('email', formData.email);
     data.append('number', formData.number);
-    data.append('image', formData.image);
     data.append('password', formData.password);
+    data.append('image', formData.image);
 
 
     fetch(`${apiUrl}/submit-form`, { 

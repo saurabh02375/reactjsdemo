@@ -1,12 +1,14 @@
 import React, { useState,useEffect } from 'react';
 import './Register.css'; // External CSS file to maintain the styles
+const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;;
+
 
 const Login = () => {
   
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     username: '',
-    image: null,
+    password: '',
   });
 
   const handleChange = (e) => {
@@ -17,35 +19,28 @@ const Login = () => {
     });
   };
   
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = new FormData();
-    form.append('username', formData.username);
-    form.append('image', formData.image);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-    // Handle the form submission logic here
-    console.log('Form data:', formData);
+    const data = new FormData();
+    data.append('username', formData.username);
+    data.append('password', formData.password);
 
-    // Trigger useEffect by updating state
-    setIsSubmitted(true);
+
+    fetch(`${apiUrl}/login`, { 
+      method: 'POST',
+      body: data,
+    })
+      .then(response => response.json())
+      .then(result => {
+        console.log('Success:', result);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
   };
 
-    useEffect(() => {
-      if (isSubmitted) {
-        fetch('https://api.github.com/users/hiteshchoudhary')
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data);
-          })
-          .catch((error) => {
-            console.error('Error fetching data:', error);
-          });
-        
-        // Reset the submission state if needed
-        setIsSubmitted(false);
-      }
-    }, [isSubmitted]);
-
+    
   return (
     <>
       <div className="col-lg-6 col-12 mx-auto">
@@ -80,7 +75,7 @@ const Login = () => {
       </label>
       
 
-      <button className="submit">Login</button>
+      <button type='submit' className="submit">Login</button>
     </form>
         </div>
       </div>
