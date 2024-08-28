@@ -9,8 +9,8 @@ const Register = () => {
     username: '',
     image: null,
     email: '',
-    number: ''
-
+    number: '',
+    password: ''
   });
 
   const handleChange = (e) => {
@@ -29,6 +29,8 @@ const Register = () => {
     data.append('email', formData.email);
     data.append('number', formData.number);
     data.append('image', formData.image);
+    data.append('password', formData.password);
+
 
     fetch(`${apiUrl}/submit-form`, { 
       method: 'POST',
