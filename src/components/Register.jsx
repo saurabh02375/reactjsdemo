@@ -57,7 +57,7 @@ const Register = () => {
           placeholder=""
           name="username"
           type="text"
-          className="register-class input"
+          className="register-class input text-light"
           value={formData.username|| ''}
           onChange={handleChange}
         />
@@ -69,7 +69,7 @@ const Register = () => {
           placeholder=""
           name="email"
           type="text"
-          className="register-class input"
+          className="register-class input text-light"
           value={formData.email|| ''}
           onChange={handleChange}
         />
@@ -81,7 +81,7 @@ const Register = () => {
           placeholder=""
           name="number"
           type="number"
-          className="register-class input"
+          className="register-class input text-light"
           value={formData.number|| ''}
           onChange={handleChange}
         />
