@@ -1,7 +1,5 @@
     /* From Uiverse.io by Yaya12085 */ 
     .custum-file-upload {
-        height: 100px;
-        width: 300px;
         display: flex;
         flex-direction: column;
         align-items: space-between;
@@ -47,7 +45,7 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        max-width: 350px;
+        width: 100%;
         background-color: #fff;
         padding: 20px;
         border-radius: 20px;
@@ -88,7 +86,7 @@
       }
       
       .message, .signin {
-        color: rgba(88, 87, 87, 0.822);
+        color: white;
         font-size: 14px;
       }
       
@@ -126,7 +124,7 @@
         position: absolute;
         left: 10px;
         top: 15px;
-        color: grey;
+        color: white;
         font-size: 0.9em;
         cursor: text;
         transition: 0.3s ease;
@@ -184,7 +182,7 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  background-color: #307750;
+  background-color: #232423;
   color: #fff;
   border-style: none;
   padding: .5em 1em;
@@ -210,7 +208,7 @@
   height: 100%;
   width: 0;
   border-radius: 0.5em;
-  background-color: #469b61;
+  background-color: royalblue;
   z-index: -1;
   transition: all 350ms;
 }
