@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './Register.css'; // External CSS file to maintain the styles
-const apiUrl = process.env.REACT_APP_API_URL;
+import './Register.css'; 
+const apiUrl = import.meta.env.REACT_APP_API_BASE_URL;;
 
 const Register = () => {
 
