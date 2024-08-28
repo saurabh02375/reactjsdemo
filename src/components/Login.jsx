@@ -22,13 +22,19 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const data = new FormData();
-    data.append('username', formData.username);
-    data.append('password', formData.password);
+    const data =new URLSearchParams({
+      'username': formData.username,
+      'password':formData.password,
+  });
+
+    console.log(data)
 
 
     fetch(`${apiUrl}/login`, { 
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
       body: data,
     })
       .then(response => response.json())
