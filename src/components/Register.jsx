@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Register.css'; 
-const apiUrl = import.meta.env.REACT_APP_API_BASE_URL;;
+const apiUrl = import.meta.env.VITE_REACT_APP_API_URL;;
 
 const Register = () => {
 
@@ -30,7 +30,7 @@ const Register = () => {
     data.append('number', formData.number);
     data.append('image', formData.image);
 
-    fetch('apiUrl/submit-form', {
+    fetch(`${apiUrl}/submit-form`, { 
       method: 'POST',
       body: data,
     })
