@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Register.css'; // External CSS file to maintain the styles
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const Register = () => {
 
@@ -29,7 +30,7 @@ const Register = () => {
     data.append('number', formData.number);
     data.append('image', formData.image);
 
-    fetch('https://nodeproject-izw9.onrender.com/submit-form', {
+    fetch('apiUrl/submit-form', {
       method: 'POST',
       body: data,
     })

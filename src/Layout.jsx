@@ -3,6 +3,7 @@ import { Header } from './components'
 import { Outlet } from 'react-router-dom';
 import video from './assets/videos/earth-rotation.mp4';
 
+
 const Layout = () => {
   return (
     <>

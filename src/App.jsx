@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { Home } from './components'
+const apiUrl = process.env.REACT_APP_API_URL;
 
 
 function App() {
