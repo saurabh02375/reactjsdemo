@@ -106,6 +106,18 @@ const Register = () => {
               </button>
 
             </label>
+            <label>
+              <input
+                required
+                placeholder=""
+                name="password"
+                type="password"
+                className="register-class input text-light"
+                value={formData.password || ''}
+                onChange={handleChange}
+              />
+              <span>Password</span>
+            </label>
 
             <button className="register-class submit">Submit</button>
           </form>
