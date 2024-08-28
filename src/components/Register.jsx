@@ -44,10 +44,10 @@ const Register = () => {
 
   return (
     <>
-      <div className="col-lg-6 col-12 mx-auto">
+      <div className=" col-lg-6 col-12 mx-auto">
       {/* <h1 className="text-white mt-2 mb-4 pb-2 text-center">Stay tuned!</h1> */}
-        <div className="d-flex flex-wrap align-items-center justify-content-center">
-        <form className="form" onSubmit={handleSubmit} encType="multipart/form-data">
+        <div className="offcanvas-body d-flex flex-wrap align-items-center justify-content-center">
+        <form className="register-class form" onSubmit={handleSubmit} encType="multipart/form-data">
       <p className="title">Register</p>
       <p className="message">Signup now and get full access to our app.</p>
 
@@ -57,7 +57,7 @@ const Register = () => {
           placeholder=""
           name="username"
           type="text"
-          className="input"
+          className="register-class input"
           value={formData.username|| ''}
           onChange={handleChange}
         />
@@ -69,7 +69,7 @@ const Register = () => {
           placeholder=""
           name="email"
           type="text"
-          className="input"
+          className="register-class input"
           value={formData.email|| ''}
           onChange={handleChange}
         />
@@ -81,7 +81,7 @@ const Register = () => {
           placeholder=""
           name="number"
           type="number"
-          className="input"
+          className="register-class input"
           value={formData.number|| ''}
           onChange={handleChange}
         />
@@ -97,19 +97,20 @@ const Register = () => {
             />
           </svg>
         </div>
-        <div className="text">
+        <div className="register-class text">
           <span>Upload Image</span>
         </div>
         <input
           type="file"
           accept="image/png, image/gif, image/jpeg"
           id="file"
+          className='register-class'
           name="image"
           onChange={handleChange}
         />
       </label>
 
-      <button className="submit">Submit</button>
+      <button className="register-class submit">Submit</button>
     </form>
         </div>
       </div>

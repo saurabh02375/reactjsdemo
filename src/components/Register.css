@@ -161,6 +161,9 @@
       .submit:hover {
         background-color: rgb(56, 90, 194);
       }
+      .register-class{
+        background-color: rgb(0, 0, 0 , 0.5);
+      }
       
       @keyframes pulse {
         from {
