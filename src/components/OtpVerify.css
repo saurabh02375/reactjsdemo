@@ -1,5 +1,5 @@
 /* From Uiverse.io by Yaya12085 */ 
-.form {
+.form-otp {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -41,7 +41,7 @@
   outline: none;
 }
 
-.action {
+.action-otp {
   margin-top: 24px;
   padding: 12px 16px;
   border-radius: 8px;
@@ -53,11 +53,11 @@
 }
 
 /* hard reset */
-.form-card-input {
+.form-card-input-otp {
   all: unset;
 }
 
-.form-card-input-wrapper {
+.form-card-input-wrapper-otp {
   position: relative;
   width: 100%;
   height: 3rem;
@@ -67,7 +67,7 @@
   margin-bottom: 1rem;
 }
 
-.form-card-input {
+.form-card-input-otp {
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 2rem;
@@ -80,7 +80,7 @@
   background-color: transparent;
 }
 
-.form-card-input-bg {
+.form-card-input-bg-otp {
   content: '';
   width: 240px;
   height: 60px;
