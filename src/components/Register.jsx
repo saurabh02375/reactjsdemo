@@ -55,7 +55,8 @@ const Register = () => {
 
             <label>
               <input
-                required
+                        padding: 20px;
+
                 placeholder=""
                 name="username"
                 type="text"
@@ -67,7 +68,8 @@ const Register = () => {
             </label>
             <label>
               <input
-                required
+                        padding: 20px;
+
                 placeholder=""
                 name="email"
                 type="text"
@@ -79,7 +81,8 @@ const Register = () => {
             </label>
             <label>
               <input
-                required
+                        padding: 20px;
+
                 placeholder=""
                 name="number"
                 type="number"
@@ -92,7 +95,8 @@ const Register = () => {
 
             <label>
               <input
-                required
+                        padding: 20px;
+
                 placeholder=""
                 name="password"
                 type="password"
